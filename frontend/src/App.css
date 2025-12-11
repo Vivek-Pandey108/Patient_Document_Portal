@@ -1,0 +1,243 @@
+/* src/App.css */
+
+:root {
+  --bg: #f5f7fb;
+  --card-bg: #ffffff;
+  --border: #e0e4ee;
+  --primary: #2563eb;
+  --primary-soft: #e0edff;
+  --danger: #dc2626;
+  --text-main: #111827;
+  --text-subtle: #6b7280;
+  --radius-lg: 16px;
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, #e0ecff, #f5f7fb 50%);
+  color: var(--text-main);
+}
+
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 960px;
+}
+
+.app-header {
+  margin-bottom: 24px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 0.02em;
+}
+
+.app-subtitle {
+  margin: 8px 0 0;
+  color: var(--text-subtle);
+  font-size: 14px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+/* Upload form */
+
+.upload-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.upload-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--text-subtle);
+}
+
+.upload-label input[type="file"] {
+  font-size: 13px;
+}
+
+.field-error {
+  color: var(--danger);
+  font-size: 13px;
+}
+
+/* Buttons */
+
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.1s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+}
+
+.btn.primary:hover:not(:disabled) {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-main);
+}
+
+.btn.ghost:hover {
+  background: #f3f4ff;
+}
+
+.btn.danger {
+  background: var(--danger);
+  color: white;
+}
+
+.btn.danger:hover {
+  background: #b91c1c;
+}
+
+/* Table */
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.doc-table thead {
+  background: #f3f4ff;
+}
+
+.doc-table th,
+.doc-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.doc-table th {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-subtle);
+}
+
+.filename-cell {
+  max-width: 260px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.actions-cell {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.empty-state {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--text-subtle);
+}
+
+/* Message bar */
+
+.message-bar {
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.message-bar.success {
+  background: #ecfdf3;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+.message-bar.error {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+/* Responsive */
+
+@media (max-width: 640px) {
+  .upload-form {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .app-root {
+    padding: 20px 10px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+}
